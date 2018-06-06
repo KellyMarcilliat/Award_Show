@@ -98,8 +98,45 @@ class AwardShowTest < Minitest::Test
     show.add_nominee(nominee_2)
 
     assert_equal 60000000, show.average_salary
-  end 
+  end
 
-  # +show.average_salary
-  # +#=> 60000000
+  def test_it_shows_nominees_total_net_worth
+    show = AwardShow.new(2018)
+
+    actress_1 = Actor.new("Jennifer Lawrence", 1990, "110000000")
+    movie_1 = Movie.new("Hunger Games", 2012)
+    nominee_1 = Nominee.new(actress_1, movie_1)
+
+
+    actress_2 = Actor.new("Brie Larson", 1989, "10000000")
+    movie_2 = Movie.new("Room", 2015)
+    nominee_2 = Nominee.new(actress_2, movie_2)
+
+    show.add_nominee(nominee_1)
+    show.add_nominee(nominee_2)
+
+    show.average_salary
+
+    assert_equal 120000000, show.nominees_total_net_worth
+  end
+
+  def test_it_can_alpabetize_last_names
+    show = AwardShow.new(2018)
+
+    actress_1 = Actor.new("Jennifer Lawrence", 1990, "110000000")
+    movie_1 = Movie.new("Hunger Games", 2012)
+    nominee_1 = Nominee.new(actress_1, movie_1)
+
+
+    actress_2 = Actor.new("Brie Larson", 1989, "10000000")
+    movie_2 = Movie.new("Room", 2015)
+    nominee_2 = Nominee.new(actress_2, movie_2)
+
+    show.add_nominee(nominee_1)
+    show.add_nominee(nominee_2)
+
+    show.nominees
+
+    assert_equal ["Larson", "Lawrence"], show.nominees_alphabetical_last_names
+  end
 end
