@@ -26,34 +26,37 @@
 
 +```
 +
-+### Iteration 2
-+
+### Iteration 2
+
 +Writing your own tests to drive development, create a `Nominee` and `AwardShow` class with the functionality described below.
-+
-+```ruby
+
 +actress_1 = Actor.new("Jennifer Lawrence", 1990, "110000000")
 +movie_1 = Movie.new("Hunger Games", 2012)
 +nominee_1 = Nominee.new(actress_1, movie_1)
 +#=> <Nominee...>
+
 +nominee_1.actor
 +#=> <Actor...>
+
 +nominee_1.movie
 +#=> <Movie...>
-+
+
 +actress_2 = Actor.new("Brie Larson", 1989, "10000000")
 +movie_2 = Movie.new("Room", 2015)
 +nominee_2 = Nominee.new(actress_2, movie_2)
 +#=> <Nominee...>
-+
+
+
 +show = AwardShow.new(2017)
 +#=> <AwardShow...>
+
 +show.year
 +#=> 2017
+
 +show.nominees
 +#=> []
-+```
-+
-+
+
+
 +### Iteration 3
 +
 +Writing your own tests to drive development, create the functionality for the `AwardShow` class described below.
